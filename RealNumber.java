@@ -1,21 +1,41 @@
+
 public class RealNumber{
-private double num;
-public RealNumber(x){
-  num=x;
-}
-public String toString(){
-return "hey";
-}
-public RealNumber add(a){
-  return new RealNumber(2);
-}
-public RealNumber subtract(a){
-  return new RealNumber(2);
-}
-public RealNumber multiply(a){
-  return new RealNumber(2);
-}
-public RealNumber divide(a){
-  return new RealNumber(3);
-}
+  private double value;
+
+  public RealNumber(double v){
+    value = v;
+  }
+  /*
+  *Return the sum of this and the other
+  */
+  public double add(RealNumber other){
+    return value+other.getValue();
+  }
+  /*
+  *Return the product of this and the other
+  */
+  public double multiply(RealNumber other){
+    return value*other.getValue();
+  }
+  /*
+  *Return the this divided by the other
+  */
+  public double divide(RealNumber other){
+    return value/other.getValue();
+  }
+  /*
+  *Return the this minus the other
+  */
+  public double subtract(RealNumber other){
+    return value-other.getValue();
+  }
+
+
+  public double getValue(){
+    return value;
+  }
+
+  public String toString(){
+    return ""+value;
+  }
 }
