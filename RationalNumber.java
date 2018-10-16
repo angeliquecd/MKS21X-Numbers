@@ -55,7 +55,7 @@ private int numberator, denominator;
   *@return the value expressed as "3/4" or "8/3"
   */
   public String toString(){
-    return ""+nume+"/"+deno;
+    return ""+numerator+"/"+denominator;
   }
 
 
@@ -66,13 +66,15 @@ private int numberator, denominator;
   *@return the value of the GCD
   */
   public static int gcd(int a, int b){
+    int bigger;
+    int smaller;
     if (a>b){
-      int bigger=a;
-      int smaller=b;
+       bigger=a;
+       smaller=b;
     }
     else {
-      int bigger=b;
-      int smaller=a;
+      bigger=b;
+      smaller=a;
     }
     while (smaller>0){
       int b = bigger%smaller;
