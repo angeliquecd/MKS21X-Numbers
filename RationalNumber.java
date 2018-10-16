@@ -65,9 +65,21 @@ private int numberator, denominator;
   *@param b the second integer
   *@return the value of the GCD
   */
-  private static int gcd(int a, int b){
-    /*use euclids method or a better one*/
-    return 0;
+  public static int gcd(int a, int b){
+    if (a>b){
+      int bigger=a;
+      int smaller=b;
+    }
+    else {
+      int bigger=b;
+      int smaller=a;
+    }
+    while (smaller>0){
+      int b = bigger%smaller;
+      bigger=smaller;
+      smaller=b;
+    }
+    return bigger;
   }
 
 
