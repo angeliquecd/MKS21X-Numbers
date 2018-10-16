@@ -15,5 +15,10 @@ System.out.println(one.reciprocal());//should print 1/4
 System.out.println(one.subtract(two));//should print 19/6
 System.out.println(three.equals(four));//should print true
 System.out.println(five);//should print 0,0 and tests zero rule
+
+RealNumber a = new RealNumber(0.546);
+RealNumber b = new RealNumber(7.46);
+System.out.println(a.divide(b));//should print 0,0 and tests zero rule
 }
+
 }
