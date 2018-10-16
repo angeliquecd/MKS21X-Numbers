@@ -111,8 +111,7 @@ public class RationalNumber extends RealNumber{
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    RationalNumber answer = new RationalNumber(numerator*other.getDenominator()
-    ,denominator*other.getNumerator());
+    RationalNumber answer = this.multiply(other.reciprocal());
      answer.reduce();
      return answer;
   }
@@ -121,7 +120,13 @@ public class RationalNumber extends RealNumber{
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    return null;
+    int denom=denominator*other.getDenominator();
+    int numethis=numerator*other.getDenominator();
+    int numeother=denominator*other.getNumerator();
+    RationalNumber answer = new RationalNumber(numethis+numeother
+    ,denom);
+     answer.reduce();
+     return answer;
   }
   /**
   *Return a new RationalNumber that this minus the other
