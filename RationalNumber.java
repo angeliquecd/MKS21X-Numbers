@@ -1,8 +1,4 @@
 public class RationalNumber extends RealNumber{
-
-private int numberator, denominator;
-
-=======
   private int numerator, denominator;
   /**Initialize the RationalNumber with the provided values
   *@param nume the numerator
@@ -41,7 +37,7 @@ private int numberator, denominator;
   *and denominator as this RationalNumber but reversed.
   */
   public RationalNumber reciprocal(){
-    return RationalNumber(denominator,numerator);
+    return new RationalNumber(denominator, numerator);
   }
   /**
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
@@ -77,9 +73,9 @@ private int numberator, denominator;
       smaller=a;
     }
     while (smaller>0){
-      int b = bigger%smaller;
+      int c = bigger%smaller;
       bigger=smaller;
-      smaller=b;
+      smaller=c;
     }
     return bigger;
   }
