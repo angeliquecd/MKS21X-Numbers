@@ -61,7 +61,7 @@ public class RationalNumber extends RealNumber{
   *@param b the second integer
   *@return the value of the GCD
   */
-  public static int gcd(int a, int b){
+  private static int gcd(int a, int b){
     int bigger;
     int smaller;
     if (a>b){
@@ -87,8 +87,12 @@ public class RationalNumber extends RealNumber{
   *This must be used to maintain that all RationalNumbers are
   *reduced after construction.
   */
-  private void reduce(){
-
+  public void reduce(){
+    int gcd = gcd(numerator,denominator);
+      if (gcd!=0){
+        numerator=numerator/gcd;
+        denominator=denominator/gcd;
+      }
   }
   /******************Operations!!!!****************/
 
