@@ -57,7 +57,9 @@ public class RationalNumber extends RealNumber{
     if (denominator==1){
       return ""+numerator;
     }
-
+    if (denominator<0){
+      return "-"+numerator+"/"+-1*denominator;
+    }
     else return ""+numerator+"/"+denominator;
   }
 
@@ -72,12 +74,12 @@ public class RationalNumber extends RealNumber{
     int bigger;
     int smaller;
     if (a>b){
-       bigger=a;
-       smaller=b;
+       bigger=Math.abs(a);
+       smaller=Math.abs(b);
     }
     else {
-      bigger=b;
-      smaller=a;
+      bigger=Math.abs(b);
+      smaller=Math.abs(a);
     }
     while (smaller>0){
       int c = bigger%smaller;
