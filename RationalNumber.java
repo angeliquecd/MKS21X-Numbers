@@ -14,6 +14,7 @@ public class RationalNumber extends RealNumber{
     numerator=nume;
     denominator=deno;
   }
+  this.reduce();
   }
 
   public double getValue(){
@@ -43,6 +44,8 @@ public class RationalNumber extends RealNumber{
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
+    other.reduce();
+    this.reduce();
     return (denominator==other.getDenominator() && numerator==other.getNumerator());
   }
 
@@ -51,7 +54,11 @@ public class RationalNumber extends RealNumber{
   *@return the value expressed as "3/4" or "8/3"
   */
   public String toString(){
-    return ""+numerator+"/"+denominator;
+    if (denominator==1){
+      return ""+numerator;
+    }
+
+    else return ""+numerator+"/"+denominator;
   }
 
 
@@ -132,6 +139,12 @@ public class RationalNumber extends RealNumber{
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return null;
+    int denom=denominator*other.getDenominator();
+    int numethis=numerator*other.getDenominator();
+    int numeother=denominator*other.getNumerator();
+    RationalNumber answer = new RationalNumber(numethis-numeother
+    ,denom);
+     answer.reduce();
+    return answer;
   }
 }
