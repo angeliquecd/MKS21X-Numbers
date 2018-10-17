@@ -36,7 +36,8 @@ public class Driver {
     RationalNumber c = new RationalNumber(4,8);
     RationalNumber d = new RationalNumber(0,4);
     RationalNumber e = new RationalNumber(21,-70);
-
+    RationalNumber f = new RationalNumber(0,1);
+    System.out.println(f.reciprocal());
     //testing negative numbers specifically
     System.out.println("Rational Number e (Should print -3/10): "+e);
     // testing methods, RationalNumber(s)
